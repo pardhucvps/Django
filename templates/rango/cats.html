@@ -1,0 +1,12 @@
+
+{% if cat_list %}
+{% for c in cat_list %}
+<li>
+  <strong>
+    <a href="{% url 'show_category' c.slug %}">{{ c.name }}</a>
+  </strong>
+</li>
+{% endfor %}
+{% else %}
+  <button type="button" name="button" class="btn btn-primary" onclick="location.href = '{% url 'add_category' %}'">Add Category</button>
+{% endif %}
